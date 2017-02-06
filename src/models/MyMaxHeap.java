@@ -14,6 +14,7 @@ public class MyMaxHeap<T extends Comparable<? super T>> implements MaxHeapInterf
 	@Override
 	public void add(T newEntry) {
 		content.add(newEntry);
+		siftUp();
 	}
 	//replaces the contents of the first index of the array with the contents of the last index, then deletes the last index
 	@Override
@@ -23,6 +24,7 @@ public class MyMaxHeap<T extends Comparable<? super T>> implements MaxHeapInterf
 		Collections.swap(content, 0, content.size()-1);
 		T max = content.get(content.size() -1);
 		content.remove(content.size()-1);
+		siftDown();
 		return max;
 		}
 		return null;
