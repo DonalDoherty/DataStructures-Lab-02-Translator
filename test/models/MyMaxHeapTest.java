@@ -6,7 +6,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class MyMaxHeapTest {
-	MyMaxHeap heap;
+	MyMaxHeap<String> heap;
 	
 	@Before
 	public void setUp(){
@@ -34,15 +34,31 @@ public class MyMaxHeapTest {
 		String u = "Uniform";
 		String v = "Victor";
 		String w = "Whiskey";
-		String x = "Xrat";
+		String x = "Xray";
 		String y = "Yankee";
 		String z = "Zulu";
 
 	}
 
 	@Test
-	public void test() {
-		fail("Not yet implemented");
+	public void testAdd() {
+		String a = "Alpha";
+		String b = "Bravo";
+		heap.add(b);
+		assertEquals(heap.getSize(), 1);
+		heap.add(a);
+		assertEquals(heap.getSize(), 2);
 	}
-
+	
+	
+	@Test
+	public void testGetMax() {
+		String c = "Charlie";
+		String d = "Delta";
+		String f = "Foxtrot";
+		heap.add(d);
+		heap.add(f);
+		heap.add(c);
+		assertEquals(heap.getMax(), "Foxtrot");
+		}
 }
