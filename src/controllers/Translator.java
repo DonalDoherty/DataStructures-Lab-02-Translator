@@ -10,8 +10,8 @@ import models.MyMaxHeap;
 
 public class Translator {
 	private Scanner input;
-	private CSVLoader csv;
-	private MyMaxHeap<WordPair> pairs;
+	public CSVLoader csv;
+	public MyMaxHeap<WordPair> pairs;
 	
 	public Translator()
 	{
@@ -60,7 +60,7 @@ public class Translator {
 		}
 	}
 	
-	private void add()
+	public void add()
 	{
 		System.out.println("Please enter Spanish: ");
 		System.out.println("==>:  ");
@@ -76,6 +76,27 @@ public class Translator {
 	
 	private void search()
 	{
+		System.out.println("Please enter your Spanish search term: ");
+		System.out.println("==>:  ");
+		String search = input.nextLine();
+		search = input.nextLine();
+		MyMaxHeap<WordPair> searchHeap = new MyMaxHeap();
+		searchHeap = pairs;
+		int counter = 0;
+		for(int i = 0; searchHeap.isEmpty() == false; i++)
+		{
+			counter++;
+			if(search.equals( searchHeap.getMax().getSpanish()))
+			{
+				System.out.println(searchHeap.removeMax().getEnglish() + "	It took " + counter + " searches to find your search!");
+			}
+			else
+			{
+				searchHeap.removeMax();
+			}
+			
+		}
+		System.out.println("There are no matches!");
 		
 	}
 	
