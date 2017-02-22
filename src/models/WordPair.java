@@ -33,5 +33,10 @@ public class WordPair implements Comparable<WordPair>{
 		return 0;
 	}
 
+	@Override
+	public String toString() {
+		return "Pair [Spanish=" + spanish + ", English=" + english + "]";
+	}
+
 	
 }

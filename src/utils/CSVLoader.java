@@ -11,7 +11,7 @@ public class CSVLoader {
 		File pairFile = new File(filename);
 		In inPairs = new In(pairFile);
 		
-		String delims = " 	";
+		String delims = "    ";
 		MyMaxHeap<WordPair> pairs = new MyMaxHeap<WordPair>();
 		while(!inPairs.isEmpty())
 		{
@@ -19,8 +19,8 @@ public class CSVLoader {
 			String[] pairTokens = pair.split(delims);
 			if (pairTokens.length == 2)
 			{
-				String spanish = pairTokens[1];
-				String english = pairTokens[2];
+				String spanish = pairTokens[0];
+				String english = pairTokens[1];
 				
 				pairs.add(new WordPair(spanish, english));
 			}
